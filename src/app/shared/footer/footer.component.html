@@ -1,0 +1,22 @@
+<footer
+  class="bottom-0 left-0 right-0 pt-11 pb-8 shadow-[0_-10px_30px_-5px_rgba(255,255,255,0.25)]"
+>
+  <div>
+    <ul class="text-white flex flex-wrap justify-center divide-x divide-white">
+      <li class="px-4">{{ footer.copyright }}</li>
+
+      @for(link of footer.links ; track link){
+      <li class="px-4">{{ link }}</li>
+      }
+
+      <li class="flex gap-3 px-4">
+        <a>
+          <img src="images/facebookFooter.png" class="h-6" />
+        </a>
+        <a>
+          <img src="images/instaFooter.png" class="w-6" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

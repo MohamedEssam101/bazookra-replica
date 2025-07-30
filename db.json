@@ -1,0 +1,1551 @@
+{
+  "country": [
+    {
+      "id": 1,
+      "name": "Egypt",
+      "code": "EG",
+      "currency": "EGP",
+      "delivery_fee": 35,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "Cairo",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Alexandria",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Giza",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Shubra",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Port Said",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Suez",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Mansoura",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Mahalla",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Tanta",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Asyut",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "name": "Faiyum",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "name": "Zagazig",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "name": "Ismailia",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "name": "Luxor",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "name": "Aswan",
+      "country_id": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "areas": [
+    {
+      "id": 1,
+      "name": "Nasr City",
+      "city_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Heliopolis",
+      "city_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Maadi",
+      "city_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Smouha",
+      "city_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Miami",
+      "city_id": 2
+    },
+    {
+      "id": 6,
+      "name": "Sidi Gaber",
+      "city_id": 2
+    },
+    {
+      "id": 7,
+      "name": "Dokki",
+      "city_id": 3
+    },
+    {
+      "id": 8,
+      "name": "Mohandessin",
+      "city_id": 3
+    },
+    {
+      "id": 9,
+      "name": "Faisal",
+      "city_id": 3
+    },
+    {
+      "id": 10,
+      "name": "Shubra Center",
+      "city_id": 4
+    },
+    {
+      "id": 11,
+      "name": "Bahteem",
+      "city_id": 4
+    },
+    {
+      "id": 12,
+      "name": "Warraq",
+      "city_id": 4
+    },
+    {
+      "id": 13,
+      "name": "Downtown Port Said",
+      "city_id": 5
+    },
+    {
+      "id": 14,
+      "name": "El-Manakh",
+      "city_id": 5
+    },
+    {
+      "id": 15,
+      "name": "El-Zohour",
+      "city_id": 5
+    },
+    {
+      "id": 16,
+      "name": "Suez City Center",
+      "city_id": 6
+    },
+    {
+      "id": 17,
+      "name": "Arbaeen",
+      "city_id": 6
+    },
+    {
+      "id": 18,
+      "name": "Ganayen",
+      "city_id": 6
+    },
+    {
+      "id": 19,
+      "name": "Mansoura Downtown",
+      "city_id": 7
+    },
+    {
+      "id": 20,
+      "name": "Talkha",
+      "city_id": 7
+    },
+    {
+      "id": 21,
+      "name": "Shahin",
+      "city_id": 7
+    },
+    {
+      "id": 22,
+      "name": "Mahalla Center",
+      "city_id": 8
+    },
+    {
+      "id": 23,
+      "name": "El-Kubra",
+      "city_id": 8
+    },
+    {
+      "id": 24,
+      "name": "Samanoud",
+      "city_id": 8
+    },
+    {
+      "id": 25,
+      "name": "Tanta Main District",
+      "city_id": 9
+    },
+    {
+      "id": 26,
+      "name": "El-Gharbia",
+      "city_id": 9
+    },
+    {
+      "id": 27,
+      "name": "Kafr El-Zayat",
+      "city_id": 9
+    },
+    {
+      "id": 28,
+      "name": "Asyut Downtown",
+      "city_id": 10
+    },
+    {
+      "id": 29,
+      "name": "El-Fath",
+      "city_id": 10
+    },
+    {
+      "id": 30,
+      "name": "Abnoub",
+      "city_id": 10
+    },
+    {
+      "id": 31,
+      "name": "Faiyum City Center",
+      "city_id": 11
+    },
+    {
+      "id": 32,
+      "name": "Ibshway",
+      "city_id": 11
+    },
+    {
+      "id": 33,
+      "name": "Senoures",
+      "city_id": 11
+    },
+    {
+      "id": 34,
+      "name": "Zagazig Downtown",
+      "city_id": 12
+    },
+    {
+      "id": 35,
+      "name": "Abu Hammad",
+      "city_id": 12
+    },
+    {
+      "id": 36,
+      "name": "10th of Ramadan",
+      "city_id": 12
+    },
+    {
+      "id": 37,
+      "name": "Ismailia City Center",
+      "city_id": 13
+    },
+    {
+      "id": 38,
+      "name": "Fayed",
+      "city_id": 13
+    },
+    {
+      "id": 39,
+      "name": "Qantara",
+      "city_id": 13
+    },
+    {
+      "id": 40,
+      "name": "Luxor Corniche",
+      "city_id": 14
+    },
+    {
+      "id": 41,
+      "name": "Karnak",
+      "city_id": 14
+    },
+    {
+      "id": 42,
+      "name": "Armant",
+      "city_id": 14
+    },
+    {
+      "id": 43,
+      "name": "Aswan Corniche",
+      "city_id": 15
+    },
+    {
+      "id": 44,
+      "name": "Kom Ombo",
+      "city_id": 15
+    },
+    {
+      "id": 45,
+      "name": "Edfu",
+      "city_id": 15
+    }
+  ],
+  "branches": [
+    {
+      "id": 1,
+      "name": "Nasr City Branch",
+      "area_id": 1,
+      "address": "123 Main Street, Nasr City",
+      "phone": "02-12345678",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Smouha Branch",
+      "area_id": 4,
+      "address": "456 Alexandria Street, Smouha",
+      "phone": "03-87654321",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Offers",
+      "description": "Limited time and bundle offers",
+      "image_url": "offers.jpg",
+      "sort_order": 1,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Chicken Sandwich",
+      "description": "Delicious chicken sandwiches",
+      "image_url": "chicken_sandwich.jpg",
+      "sort_order": 2,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Beef Sandwich",
+      "description": "Juicy beef sandwich selection",
+      "image_url": "beef_sandwich.jpg",
+      "sort_order": 3,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Family Meal",
+      "description": "Perfect big meals for sharing",
+      "image_url": "family_meal.jpg",
+      "sort_order": 4,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Meals",
+      "description": "Combo and individual meal boxes",
+      "image_url": "meals.jpg",
+      "sort_order": 5,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Extras",
+      "description": "Sides, sauces, and add-ons",
+      "image_url": "extras.jpg",
+      "sort_order": 6,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Appetizers",
+      "description": "Light starters and share plates",
+      "image_url": "appetizers.jpg",
+      "sort_order": 7,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Soft Drinks",
+      "description": "Refreshing beverage selection",
+      "image_url": "soft_drinks.jpg",
+      "sort_order": 8,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Desserts",
+      "description": "Sweets and treats",
+      "image_url": "desserts.jpg",
+      "sort_order": 9,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Chicken BBQ",
+      "description": "Crispy chicken breasts with barbecue sauce, melted cheese sauce, lettuce, tomatoes, pickles, fried onion rings",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/G3Vhb06b/s-1738168187193737.jpg",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Chicken Ranch",
+      "description": "Crispy chicken breasts, ranch sauce, mozzarella sticks, lettuce, pickles",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/ZRJN0Yrf/s-1738169068798875.jpg",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "Turkish Chicken",
+      "description": "Crispy chicken breasts, smoked turkey, melted cheese sauce, onion rings, lettuce, tomatoes, pickled cucumbers, mayonnaise.",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/mryG96n3/s-1738169888523965.jpg",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "name": "Jalapeno Chicken Crispy",
+      "description": "Spicy crispy chicken breasts, jalapenos, cheddar cheese sauce, chili sauce, lettuce, tomatoes",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "extra_spicy"
+      ],
+      "default_spice": "spicy",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/TDy07NSc/s-1738575486518206.jpg",
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "name": "Buffalo Chicken",
+      "description": "Crispy chicken breasts, buffalo sauce, cheddar cheese sauce, lettuce, tomatoes, ranch dressing",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "extra_spicy"
+      ],
+      "default_spice": "spicy",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/60qt3HK7/s-1738575903624040.jpg",
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "name": "Chicken Cheddar",
+      "description": "Crispy chicken breasts, cheddar cheese sauce, cheddar cheese slices, lettuce, pickles, ranch sauce",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/k2t9gNCT/s-1738171934559242.jpg",
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "name": "Chicken Mozzarella",
+      "description": "Crispy chicken breasts, mozzarella sticks, marinara sauce, lettuce, tomatoes",
+      "category_id": 2,
+      "pricing": {
+        "single": 145,
+        "double": 200,
+        "triple": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/nq5SKrwf/s-1738576125235005.jpg",
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "name": "Twister Chicken",
+      "description": "Chicken fillet strips, lettuce, tomatoes, pickles, ranch dressing, tortilla wrap",
+      "category_id": 2,
+      "pricing": {
+        "regular": 120
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/998n4sGD/s-1738836151723831.jpg",
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "name": "Chicken Strips",
+      "description": "5 pieces of crispy chicken strips with your choice of sauce",
+      "category_id": 2,
+      "pricing": {
+        "regular": 130
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/h1RM1Sw5/s-1745150518707064.jpg",
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "name": "Chicken Nuggets",
+      "description": "10 crispy chicken nuggets with dipping sauce",
+      "category_id": 2,
+      "pricing": {
+        "regular": 110
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/CNt8Y8c/s-1745150752564953.jpg",
+      "is_active": true
+    },
+    {
+      "id": 11,
+      "name": "Zinger Supreme",
+      "description": "Spicy chicken breasts, cheddar cheese, lettuce, pickles, zinger sauce, soft bun",
+      "category_id": 2,
+      "pricing": {
+        "single": 150,
+        "double": 205,
+        "triple": 235
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "spicy",
+        "extra_spicy"
+      ],
+      "default_spice": "spicy",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/PGrpX2fY/s-174292265288940.jpg",
+      "is_active": true
+    },
+    {
+      "id": 12,
+      "name": "Smoky Chicken",
+      "description": "Smoked flavored crispy chicken breasts, smoky BBQ sauce, cheddar cheese, lettuce, tomatoes",
+      "category_id": 2,
+      "pricing": {
+        "single": 150,
+        "double": 205,
+        "triple": 235
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/Q3nsTPsf/s-1744622143223532.jpg",
+      "is_active": true
+    },
+    {
+      "id": 13,
+      "name": "Chicken Dynamite",
+      "description": "Crispy chicken breasts, dynamite spicy sauce, cheddar cheese, lettuce, tomatoes, pickles",
+      "category_id": 2,
+      "pricing": {
+        "single": 150,
+        "double": 205,
+        "triple": 235
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "spicy",
+        "extra_spicy"
+      ],
+      "default_spice": "spicy",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/9HxxC6Bk/s-1753016121978433.jpg",
+      "is_active": true
+    },
+    {
+      "id": 14,
+      "name": "Chicken Volcano",
+      "description": "Very spicy chicken breasts, jalapeno slices, spicy sauce, cheddar cheese, lettuce, tomatoes",
+      "category_id": 2,
+      "pricing": {
+        "single": 150,
+        "double": 205,
+        "triple": 235
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "spice_options": [
+        "extra_spicy"
+      ],
+      "default_spice": "extra_spicy",
+      "has_spice_variants": false,
+      "image_url": "https://i.ibb.co/N6crfqP3/s-1748775672895993.jpg",
+      "is_active": true
+    },
+    {
+      "id": 15,
+      "name": "Chicken Tikka Wrap",
+      "description": "Grilled chicken tikka, spicy mayo, lettuce, onions, tomatoes, tortilla wrap",
+      "category_id": 2,
+      "pricing": {
+        "regular": 130
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "spice_options": [
+        "regular",
+        "spicy",
+        "mix"
+      ],
+      "default_spice": "regular",
+      "has_spice_variants": true,
+      "image_url": "https://i.ibb.co/d0hF28Yj/s-1746523633836649.jpg",
+      "is_active": true
+    },
+    {
+      "id": 16,
+      "name": "Aphachy Burger",
+      "description": "Beef Burger, Mozzarella Sticks, slice roast beef, slice cheese, mayonnaise sauce, lettuce, pickles, tomato, fresh onion",
+      "category_id": 3,
+      "pricing": {
+        "single": 165,
+        "double": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "name": "Bazooka",
+      "description": "Grilled burger, jalapeno, hot chili, cheese slice, lettuce, tomato, fresh onion",
+      "category_id": 3,
+      "pricing": {
+        "single": 165,
+        "double": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "name": "Big Bazooka Burger",
+      "description": "Beef burger, fresh onions, cheese slice, lettuce, tomatoes, pickles, Bazooka special sauce",
+      "category_id": 3,
+      "pricing": {
+        "single": 165,
+        "double": 230
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "name": "Classic Burger",
+      "description": "Burger patty, lettuce, tomato, cucumber, mayonnaise, sliced cheese, fresh onion",
+      "category_id": 3,
+      "pricing": {
+        "regular": 120
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "name": "Beef Burger",
+      "description": "Beef burger, cheese, ketchup, cucumber",
+      "category_id": 3,
+      "pricing": {
+        "single": 65,
+        "double": 100
+      },
+      "default_size": "single",
+      "has_size_variants": true,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "name": "Wrap Burger",
+      "description": "Grilled burger, Bazooka special sauce, cheese slice, lettuce, tomatoes, fresh onions",
+      "category_id": 3,
+      "pricing": {
+        "regular": 90
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "name": "Double Wrap Burger",
+      "description": "2 pieces of grilled burger, special bazooka sauce, lettuce, tomato, slice of cheese, fried onion rings",
+      "category_id": 3,
+      "pricing": {
+        "double": 175
+      },
+      "default_size": "double",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T00:00:00.000Z",
+      "updated_at": "2025-07-18T00:00:00.000Z"
+    }
+  ],
+  "city_products": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "product_id": 1,
+      "is_available": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "city_id": 2,
+      "product_id": 1,
+      "is_available": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "city_id": 2,
+      "product_id": 2,
+      "is_available": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "city_categories": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "category_id": 1,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "city_id": 2,
+      "category_id": 1,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "city_id": 2,
+      "category_id": 2,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "Happiness Rocket",
+      "description": "Happiness rocket combo meals for families and friends.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Flash Diner & Fire Supreme",
+      "description": "Quick meal combos with chicken and burgers.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "BoomBox & Hormone Elsada",
+      "description": "Express chicken and beef meals.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Share Combos",
+      "description": "Combo meals for sharing.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Molook Elsadaa & Duetto",
+      "description": "Royal and duet chicken combos.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "Lamet Elsada",
+      "description": "Meals for group sharing.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Hot Honey Offers & Fatah/Koshary Specials",
+      "description": "Hot honey chicken, koshary and special deals.",
+      "offer_type": "combo",
+      "final_price": null,
+      "image_url": "",
+      "is_active": true,
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "offer_products": [
+    {
+      "id": 1,
+      "offer_id": 1,
+      "name": "Happiness Rocket 1",
+      "description": "4 pieces of broast + 1 Coleslaw Medium + 1 bread",
+      "price": 220,
+      "image_url": ""
+    },
+    {
+      "id": 2,
+      "offer_id": 1,
+      "name": "Happiness Rocket 4",
+      "description": "4 chicken or beef single sandwich",
+      "price": 399,
+      "image_url": ""
+    },
+    {
+      "id": 3,
+      "offer_id": 1,
+      "name": "Happiness Rocket 3",
+      "description": "9 pieces of chicken - 3 coleslaw - 3 bread",
+      "price": 485,
+      "image_url": ""
+    },
+    {
+      "id": 4,
+      "offer_id": 2,
+      "name": "Flash Diner",
+      "description": "3 pieces of chicken - drink - 1 bread",
+      "price": 175,
+      "image_url": ""
+    },
+    {
+      "id": 5,
+      "offer_id": 2,
+      "name": "Fire Supreme Combo",
+      "description": "Zinger super supreme sandwich + combo (fries + drink)",
+      "price": 145,
+      "image_url": ""
+    },
+    {
+      "id": 6,
+      "offer_id": 2,
+      "name": "Single Combo",
+      "description": "Single sandwich + Combo (fries + drink)",
+      "price": 145,
+      "image_url": ""
+    },
+    {
+      "id": 7,
+      "offer_id": 3,
+      "name": "BoomBox Single",
+      "description": "Pan Chicken Burger Single Sandwich or Beef Burger Single + Chicken Piece + Medium Coleslaw + Drink + Cup of Rice",
+      "price": 155,
+      "image_url": ""
+    },
+    {
+      "id": 8,
+      "offer_id": 3,
+      "name": "Hormone Elsada (2 pieces)",
+      "description": "2 pieces of chicken + cup of rice + coleslaw",
+      "price": 140,
+      "image_url": ""
+    },
+    {
+      "id": 9,
+      "offer_id": 4,
+      "name": "Share Combo Single",
+      "description": "Single beef or chicken sandwich + 1 share beef or chicken sandwich + fries + drink",
+      "price": 190,
+      "image_url": ""
+    },
+    {
+      "id": 10,
+      "offer_id": 4,
+      "name": "Double fire Combo",
+      "description": "1 double fire chicken + 1 medium fries + 1 drink",
+      "price": 199,
+      "image_url": ""
+    },
+    {
+      "id": 11,
+      "offer_id": 4,
+      "name": "Combo Double",
+      "description": "Double sandwich+combo (fries and drink)",
+      "price": 225,
+      "image_url": ""
+    },
+    {
+      "id": 12,
+      "offer_id": 5,
+      "name": "Molook elsadaa 1 (4 pieces)",
+      "description": "4 pieces Chicken + 1 Coleslaw + 1 rice + drink + 1 Bread",
+      "price": 250,
+      "image_url": ""
+    },
+    {
+      "id": 13,
+      "offer_id": 4,
+      "name": "Share Combo Double",
+      "description": "Double chicken or beef sandwich+1 share beef or chicken double chicken+fries+drink",
+      "price": 299,
+      "image_url": ""
+    },
+    {
+      "id": 14,
+      "offer_id": 4,
+      "name": "Single El Sa3da",
+      "description": "2 single beef or chicken sandwiches + 2 medium fries + 2 drink",
+      "price": 280,
+      "image_url": ""
+    },
+    {
+      "id": 15,
+      "offer_id": 5,
+      "name": "Duetto1 (6 pieces)",
+      "description": "6 pieces of chicken + 2 coleslaw + 2 buns",
+      "price": 299,
+      "image_url": ""
+    },
+    {
+      "id": 16,
+      "offer_id": 5,
+      "name": "Duetto 2 (4 pieces)",
+      "description": "4 pieces chicken + 4 pieces strips + 2 coleslaw + 2 bread",
+      "price": 299,
+      "image_url": ""
+    },
+    {
+      "id": 17,
+      "offer_id": 4,
+      "name": "El Sa3da Double",
+      "description": "2 sandwich of your choice, served with 2 medium french fries + 2 drink",
+      "price": 450,
+      "image_url": ""
+    },
+    {
+      "id": 18,
+      "offer_id": 6,
+      "name": "Lamet Elsada (8 Piece)",
+      "description": "8 pieces of chicken - 3 coleslaw medium - 3 bread",
+      "price": 435,
+      "image_url": ""
+    },
+    {
+      "id": 19,
+      "offer_id": 6,
+      "name": "Lamet El Sohab (10 Piece)",
+      "description": "10 pieces of chicken - 3 coleslaw medium - 3 bread",
+      "price": 540,
+      "image_url": ""
+    },
+    {
+      "id": 20,
+      "offer_id": 1,
+      "name": "Happiness Rocket 2",
+      "description": "2 burger or chicken wrap sandwiches with 2 drinks and 2 fries",
+      "price": 250,
+      "image_url": ""
+    },
+    {
+      "id": 21,
+      "offer_id": 7,
+      "name": "Hot Honey (5 strips)",
+      "description": "5 strips + 1 fries + 1 coleslaw + 1 bread",
+      "price": 225,
+      "image_url": ""
+    },
+    {
+      "id": 22,
+      "offer_id": 7,
+      "name": "Offer Fatah",
+      "description": "Broast fattah + boneless fattah + fattah strips + 3 sauce",
+      "price": 360,
+      "image_url": ""
+    },
+    {
+      "id": 23,
+      "offer_id": 7,
+      "name": "Offer Koshary",
+      "description": "3 koshary",
+      "price": 320,
+      "image_url": ""
+    },
+    {
+      "id": 24,
+      "offer_id": 7,
+      "name": "Double Crunch",
+      "description": "6 pieces of chicken + 2 medium basmati rice + 2 medium salads + 2 bread",
+      "price": 350,
+      "image_url": ""
+    },
+    {
+      "id": 25,
+      "offer_id": 7,
+      "name": "Hot Honey (3 strips)",
+      "description": "3 strips + 1 fries + 1 coleslaw + 1 bread",
+      "price": 150,
+      "image_url": ""
+    },
+    {
+      "id": 23,
+      "name": "Bazooka meal 6 pieces",
+      "description": "6 pieces of crispy chicken, family fries, 2 medium coleslaw, liter drink, 3 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 440
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 24,
+      "name": "Bazooka meal 9 pieces",
+      "description": "9 pieces of crispy chicken, family fries, 2 medium coleslaw, liter drink, 4 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 650
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 25,
+      "name": "Bazooka meal 12 pieces",
+      "description": "12 pieces of crispy chicken, family fries, 2 medium coleslaw, liter drink, 6 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 750
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 26,
+      "name": "Bazooka meal 15 pieces",
+      "description": "15 pieces of crispy chicken, family fries, 2 medium coleslaw, liter drink, 7 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 850
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 27,
+      "name": "Bazooka meal 18 pieces",
+      "description": "18 pieces of crispy chicken, family fries, 4 medium coleslaw, liter drink, 9 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 950
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 28,
+      "name": "Bazooka Strips meal 10 pieces",
+      "description": "10 pieces of strips, family fries, 4 medium coleslaw, liter drink, 4 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 475
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 29,
+      "name": "Bazooka Meal 12 Pieces Mix",
+      "description": "6 crispy chicken pieces, 6 strips, family fries, 4 medium coleslaw, 1 liter drink, 6 buns",
+      "category_id": 4,
+      "pricing": {
+        "regular": 650
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 30,
+      "name": "Saving Meal 9 Pieces",
+      "description": "9 pieces of crispy chicken, 3 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 490
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 31,
+      "name": "Saving Meal 12 Pieces",
+      "description": "12 pieces of crispy chicken, 3 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 600
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 32,
+      "name": "Saving Meal 15 Pieces",
+      "description": "15 pieces of crispy chicken, 3 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 700
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    },
+    {
+      "id": 33,
+      "name": "Saving Meal 18 Pieces",
+      "description": "18 pieces of crispy chicken, 3 bread",
+      "category_id": 4,
+      "pricing": {
+        "regular": 820
+      },
+      "default_size": "regular",
+      "has_size_variants": false,
+      "image_url": "",
+      "is_active": true,
+      "created_at": "2025-07-18T18:02:00.000Z",
+      "updated_at": "2025-07-18T18:02:00.000Z"
+    }
+  ],
+  "city_offers": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "offer_id": 1,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "city_id": 2,
+      "offer_id": 1,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "phone": "+01009691301",
+      "password": "user123",
+      "name": "John Doe",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "email": "ahmed2@gmail.com",
+      "password": "$2a$10$PEvhs.4uEbmcZZdoZXlkae7bxXWrpu47RTuP5BmAUdC8Bu7rArJcK",
+      "firstName": "ahmede",
+      "mobile": "01009691301",
+      "confirmPassword": "Mohamed@123",
+      "approveTerms": true,
+      "id": 2
+    }
+  ],
+  "user_addresses": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "area_id": 1,
+      "region": "New Cairo",
+      "phone_main": "01234567890",
+      "phone_secondary": "01098765432",
+      "street": "Street 90",
+      "building_number": "12",
+      "floor_number": "3",
+      "apartment_number": "301",
+      "special_sign": "Near the pharmacy",
+      "extra_info": "Please ring the bell twice",
+      "is_default": true,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "branch_id": 1,
+      "address_id": 1,
+      "order_number": "ORD-2024-001",
+      "subtotal": 145,
+      "delivery_fee": 35,
+      "total_amount": 180,
+      "status": "delivered",
+      "payment_method": "cash",
+      "payment_status": "paid",
+      "notes": "Extra sauce please",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "order_items": [
+    {
+      "id": 1,
+      "order_id": 1,
+      "product_id": 1,
+      "size": "single",
+      "offer_id": null,
+      "quantity": 1,
+      "unit_price": 145,
+      "total_price": 145,
+      "special_instructions": "No onions",
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "cart_items": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "branch_id": 1,
+      "product_id": 2,
+      "size": "double",
+      "spice": "medium",
+      "offer_id": null,
+      "quantity": 2,
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "updated_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "cart_item_selections": [
+    {
+      "id": 1,
+      "cart_item_id": 1,
+      "selected_product_id": 1,
+      "selected_size": "single",
+      "quantity": 3,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "cart_item_id": 1,
+      "selected_product_id": 2,
+      "selected_size": "regular",
+      "quantity": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "order_item_selections": [
+    {
+      "id": 1,
+      "order_item_id": 1,
+      "selected_product_id": 1,
+      "selected_size": "single",
+      "quantity": 1,
+      "created_at": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "image_url": "/images/bannerAr1.jpg",
+      "language": "ar",
+      "position": 1,
+      "title": "Arabic Banner 1",
+      "is_active": true,
+      "created_at": "2025-07-21T15:00:00.000Z",
+      "updated_at": "2025-07-21T15:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "image_url": "/images/bannerAr2.jpg",
+      "language": "ar",
+      "position": 2,
+      "title": "Arabic Banner 2",
+      "is_active": true,
+      "created_at": "2025-07-21T15:00:00.000Z",
+      "updated_at": "2025-07-21T15:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "image_url": "/images/bannerEn1.jpg",
+      "language": "en",
+      "position": 1,
+      "title": "English Banner 1",
+      "is_active": true,
+      "created_at": "2025-07-21T15:00:00.000Z",
+      "updated_at": "2025-07-21T15:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "image_url": "/images/bannerEn2.jpg",
+      "language": "en",
+      "position": 2,
+      "title": "English Banner 2",
+      "is_active": true,
+      "created_at": "2025-07-21T15:00:00.000Z",
+      "updated_at": "2025-07-21T15:00:00.000Z"
+    }
+  ]
+}

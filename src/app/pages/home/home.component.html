@@ -1,0 +1,34 @@
+<section>
+  <!-- banners section-->
+  <div>
+    @if(banners$ | async ; as response ) {
+    <p-carousel
+      [value]="response"
+      [numVisible]="1"
+      circular="true"
+      autoplayInterval="5000"
+      showNavigators="false"
+    >
+      <ng-template let-product #item>
+        <div class="rounded-border m-2 p-4">
+          <div class="mb-4">
+            <img [src]="product.image_url" />
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+    }
+  </div>
+  <!-- best seller section -->
+  <div class="">
+    <div class="justify-between flex">
+      <span class="text-white">Best Seller</span>
+      <a routerLink="/menu" class="text-yellow-300" (click)="navigate()"
+        >view More</a
+      >
+    </div>
+    <div>
+      <p-carousel></p-carousel>
+    </div>
+  </div>
+</section>

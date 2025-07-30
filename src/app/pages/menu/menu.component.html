@@ -1,0 +1,223 @@
+<section>
+  <!-- BreadCrumb -->
+  <div class="text-white py-6">
+    <a routerLink="/home" class="hover:text-green-600 cursor-pointer"> Home</a>
+    <span class="mx-2">/</span>
+    <span class="text-yellow-300">Menu</span>
+  </div>
+
+  <!-- Menu header -->
+  <div class="flex py-6">
+    <img src="/images/bazooka-menu-icon.png" class="h-9" />
+    <span class="text-yellow-300 text-4xl font-black">Menu</span>
+  </div>
+
+  <div class="flex w-full">
+    <div class="flex-1 min-w-0 pr-4">
+      <!-- FIXED: Main content area - takes remaining space -->
+      <div class="min-w-0">
+        @if(categories$ | async ; as categories){
+
+        <!-- FIXED: Categories without max-w constraint -->
+        <div class="w-full mb-6">
+          <ul class="flex gap-3 text-center overflow-x-auto">
+            @for(categorie of categories ; track categorie.id){
+            <li
+              class="bg-[url('/images/buttons2.png')] bg-contain bg-no-repeat bg-center font-semibold text-yellow-300 min-h-12 min-w-36 flex items-center justify-center px-2 py-1 text-xs leading-tight cursor-pointer flex-shrink-0"
+              [ngClass]="{
+                active: (selectedCategory$ | async) === categorie.id
+              }"
+              (click)="categorieProducts(categorie.id)"
+            >
+              {{ categorie.name }}
+            </li>
+            }
+          </ul>
+        </div>
+
+        <!-- FIXED: Grid with proper responsive behavior -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-9 w-full"
+        >
+          @if(products$ | async ; as products){ @for(product of products ; track
+          product.id){
+          <div
+            class="flex items-center gap-3 cursor-pointer min-w-0"
+            (click)="showProductDialog(product)"
+          >
+            <img
+              [src]="product.image_url"
+              class="w-24 h-24 object-cover rounded-xl flex-shrink-0"
+            />
+            <div class="flex-col text-white min-w-0 flex-1">
+              <div class="text-yellow-300 flex font-bold items-center">
+                <img
+                  class="w-6 h-6 flex-shrink-0"
+                  src="/images/crosshairs.png"
+                />
+                <span class="pl-0.5 truncate">{{ product.name }}</span>
+              </div>
+              <span class="line-clamp-2 text-sm">{{
+                product.description
+              }}</span>
+              @if(hasPricing(product.pricing)) {
+              <span class="text-yellow-300 font-bold text-sm">Price</span>
+              @for(entry of getPricingEntries(product.pricing) ; track
+              entry[0]){
+              <div class="flex items-center">
+                <img
+                  class="w-6 h-6 flex-shrink-0"
+                  src="/images/crosshairs.png"
+                />
+                <span class="text-yellow-300 pr-1 flex-shrink-0 text-sm">
+                  {{ entry[0] }} :
+                </span>
+                <span class="font-semibold text-sm">{{ entry[1] }} EGP</span>
+              </div>
+              } }
+            </div>
+            <i
+              class="pi pi-plus text-black bg-yellow-300 p-1 rounded-xl flex-shrink-0"
+            ></i>
+          </div>
+          } }
+        </div>
+
+        <!-- Dialog stays in the same position -->
+        <p-dialog
+          (onHide)="resetForm()"
+          [(visible)]="visible"
+          [modal]="true"
+          [style]="{ width: '95vw', maxWidth: '45rem' }"
+          [dismissableMask]="true"
+        >
+          <ng-template #headless>
+            <div class="flex flex-col px-8 py-8 gap-6 bg-black border-black">
+              <div>
+                <form [formGroup]="productForm">
+                  <!-- Add menu -->
+                  <span class="text-yellow-300"> Add menu Choice</span>
+                  <div class="text-yellow-300 flex justify-between pb-3 pt-3">
+                    <span>{{ selectedProduct?.name }}</span>
+                    <span>Price Selection</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="max-w-7/12 text-white">{{
+                      selectedProduct?.description
+                    }}</span>
+                    <div class="justify-center">
+                      <p-inputnumber
+                        formControlName="quantity"
+                        max="3"
+                        [showButtons]="true"
+                        buttonLayout="horizontal"
+                        spinnerMode="horizontal"
+                        inputId="horizontal"
+                        [inputStyle]="{
+                          width: '4rem',
+                          backgroundColor: 'black',
+                          color: 'yellow',
+                          border: '1px solid yellow',
+                          textAlign: 'center'
+                        }"
+                      >
+                        <ng-template #incrementbuttonicon>
+                          <span class="pi pi-plus text-yellow-300"></span>
+                        </ng-template>
+                        <ng-template #decrementbuttonicon>
+                          <span class="pi pi-minus text-yellow-300"></span>
+                        </ng-template>
+                      </p-inputnumber>
+                    </div>
+                  </div>
+                  <!-- Sizes and Prices -->
+                  <div class="pt-3">
+                    <span class="text-yellow-300 font-medium">Sizes Front</span>
+                    @if(selectedProduct) {
+                    <!-- for the prices radiobutton -->
+                    <div>
+                      <div class="border-b-2 border-yellow-400 mb-5"></div>
+
+                      <!-- Price radioButtons - Horizontal -->
+                      <div class="flex flex-wrap justify-between">
+                        @for(entry of
+                        getPricingEntries(selectedProduct.pricing); track
+                        entry[0]){
+                        <div class="text-white flex items-center">
+                          <p-radioButton
+                            [inputId]="entry[0]"
+                            [value]="entry[1]"
+                            formControlName="price"
+                          />
+                          <label
+                            [for]="entry[0]"
+                            class="pl-2 whitespace-nowrap"
+                          >
+                            {{ entry[0] }}: ({{ entry[1] }} EGP)
+                          </label>
+                        </div>
+                        }
+                      </div>
+                      @if(price?.invalid && price?.touched){
+                      <h5 class="text-red-500 text-center py-3">
+                        Please Select Price
+                      </h5>
+                      }
+                      <span class="text-yellow-300 font-medium"
+                        >Spice Level</span
+                      >
+                      <div class="border-b-2 border-yellow-400 mb-5"></div>
+                      <!-- Spice level RadioButtons - Horizontal -->
+                      <div class="flex flex-wrap justify-around">
+                        @for(spice of selectedProduct.spice_options; track
+                        spice){
+                        <div class="text-white flex items-center">
+                          <p-radioButton
+                            [inputId]="spice"
+                            [value]="spice"
+                            formControlName="spiceLevel"
+                          />
+                          <label [for]="spice" class="pl-2 whitespace-nowrap">{{
+                            spice
+                          }}</label>
+                        </div>
+                        }
+                      </div>
+                      @if(spiceLevel?.invalid && spiceLevel?.touched){
+                      <h5 class="text-red-500 text-center py-3">
+                        Please Select Spice level
+                      </h5>
+                      }
+                    </div>
+                    <div class="text-center">
+                      <button
+                        class="bg-[url('/images/buttons2.png')] bg-contain bg-center bg-no-repeat hover:bg-[url('/images/buttons2-hover.png')] hover:text-black h-auto py-10 px-10 text-center transition-all ease-in-out duration-300 cursor-pointer text-yellow-300"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+
+                    }
+                  </div>
+                </form>
+              </div>
+            </div>
+          </ng-template>
+        </p-dialog>
+        }
+      </div>
+    </div>
+    <!-- FIXED: Shopping Cart with proper width and spacing -->
+    <div class="border-2 border-yellow-300 h-fit rounded-lg">
+      <div class="flex items-center gap-3 mb-4">
+        <i
+          class="pi pi-shopping-cart transform -scale-x-100 text-3xl text-yellow-300 flex-shrink-0"
+        ></i>
+        <h5 class="text-yellow-300 font-bold text-2xl whitespace-nowrap">
+          Shopping Cart
+        </h5>
+      </div>
+      <!-- Add your cart content here -->
+    </div>
+  </div>
+</section>

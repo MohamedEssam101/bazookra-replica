@@ -1,0 +1,104 @@
+<section>
+  <!-- main container -->
+  <div class="max-w-96 m-auto mt-40">
+    <div class="text-3xl text-yellow-300 pb-8">CREATE ACCOUNT</div>
+    <div>
+      <form [formGroup]="registerForm">
+        <!-- phone number -->
+        <div>
+          <!-- first name  -->
+          <div class="flex pb-1">
+            <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
+            <label class="text-white"> Name</label>
+          </div>
+          <input
+            formControlName="firstName"
+            placeholder="first name "
+            class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
+          />
+          <!-- first name  -->
+          <div class="flex pb-1">
+            <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
+            <label class="text-white"> Email</label>
+          </div>
+          <input
+            formControlName="email"
+            placeholder="first name "
+            class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
+          />
+          <!-- mobile -->
+          <div class="flex">
+            <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
+            <label class="text-white"> Mobile</label>
+          </div>
+          <input
+            formControlName="mobile"
+            placeholder="Mobile: xxxxxxxxxxxxxxx"
+            class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
+          />
+          @if( mobileControl?.invalid && mobileControl?.touched){
+          <span class="text-white">Please type a working phone number</span>
+          }
+          <div class="flex pb-1">
+            <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
+            <label class="text-white"> Password</label>
+          </div>
+          <input
+            formControlName="password"
+            placeholder="password"
+            class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
+          />
+          <div class="flex pb-1">
+            <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
+            <label class="text-white"> Confirm Password</label>
+          </div>
+          <input
+            formControlName="confirmPassword"
+            placeholder="Confirm password"
+            class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
+          />
+        </div>
+        <div class="pt-4 flex">
+          <p-checkbox
+            inputId="approveTerms"
+            formControlName="approveTerms"
+            binary="true"
+          />
+          <div>
+            <label for="approveTerms" class="text-white pl-2"
+              >Approve On
+            </label>
+            <a class="text-yellow-300 cursor-pointer" routerLink="/terms">
+              The Terms and conditions
+            </a>
+          </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <button
+          class="mt-8 bg-[url('/images/buttons2.png')] bg-contain bg-center bg-no-repeat text-center hover:bg-[url('/images/buttons2-hover.png')] transition-all ease-in-out duration-300 cursor-pointer text-white px-10 py-3 mtext-xl hover:text-black"
+          (click)="onSubmit()"
+        >
+          Register
+        </button>
+      </div>
+      <!-- social login options -->
+      <div class="flex flex-col items-center">
+        <h1 class="text-white font-semibold">Social Register Options</h1>
+        <div class="flex gap-4 py-4">
+          <img
+            src="/images/google-plus5.png"
+            class="w-10 h-10 cursor-pointer"
+          />
+          <img src="/images/facebook5.png" class="w-10 h-10 cursor-pointer" />
+        </div>
+        <h1 class="text-white font-semibold">Don't have an Account?</h1>
+        <a
+          class="text-yellow-300 font-medium pt-4 cursor-pointer"
+          routerLink="/register"
+          >Create New Account</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

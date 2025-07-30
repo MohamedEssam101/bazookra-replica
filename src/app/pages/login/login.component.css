@@ -1,0 +1,7 @@
+::ng-deep .p-checkbox-checked .p-checkbox-box {
+  background: rgb(240, 240, 4) !important;
+  border-color: rgb(240, 240, 4) !important;
+}
+::ng-deep .p-icon {
+  color: black;
+}

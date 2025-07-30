@@ -1,0 +1,13 @@
+::ng-deep .p-inputnumber-button {
+  border-color: yellow;
+}
+
+::ng-deep .p-radiobutton-checked .p-radiobutton-box {
+  background-color: rgb(104, 102, 102);
+  border-color: rgb(104, 102, 102);
+}
+
+.active {
+  @apply bg-[url('/images/buttons2-hover.png')];
+  color: black;
+}

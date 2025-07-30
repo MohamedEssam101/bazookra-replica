@@ -1,0 +1,6 @@
+::ng-deep .p-tieredmenu-item-label {
+  color: yellow;
+}
+::ng-deep .p-tieredmenu-item-content:hover {
+  background: gray;
+}
