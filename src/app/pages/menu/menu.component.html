@@ -1,4 +1,4 @@
-<section>
+<section class="px-7">
   <!-- BreadCrumb -->
   <div class="text-white py-6">
     <a routerLink="/home" class="hover:text-green-600 cursor-pointer"> Home</a>
@@ -14,16 +14,16 @@
 
   <div class="flex w-full">
     <div class="flex-1 min-w-0 pr-4">
-      <!-- FIXED: Main content area - takes remaining space -->
+      <!-- Main content area -->
       <div class="min-w-0">
         @if(categories$ | async ; as categories){
 
-        <!-- FIXED: Categories without max-w constraint -->
+        <!-- FIXED: Categories  -->
         <div class="w-full mb-6">
           <ul class="flex gap-3 text-center overflow-x-auto">
             @for(categorie of categories ; track categorie.id){
             <li
-              class="bg-[url('/images/buttons2.png')] bg-contain bg-no-repeat bg-center font-semibold text-yellow-300 min-h-12 min-w-36 flex items-center justify-center px-2 py-1 text-xs leading-tight cursor-pointer flex-shrink-0"
+              class="cursor-pointer bg-[url('/images/buttons2.png')] bg-contain bg-no-repeat bg-center font-semibold text-yellow-300 min-h-12 min-w-36 flex items-center justify-center px-2 py-1 text-xs leading-tight flex-shrink-0"
               [ngClass]="{
                 active: (selectedCategory$ | async) === categorie.id
               }"
@@ -148,6 +148,7 @@
                             [inputId]="entry[0]"
                             [value]="entry[1]"
                             formControlName="price"
+                            (click)="onSizeChange(entry[0], entry[1])"
                           />
                           <label
                             [for]="entry[0]"
@@ -158,7 +159,7 @@
                         </div>
                         }
                       </div>
-                      @if(price?.invalid && price?.touched){
+                      @if(priceControl?.invalid && priceControl?.touched){
                       <h5 class="text-red-500 text-center py-3">
                         Please Select Price
                       </h5>
@@ -183,7 +184,8 @@
                         </div>
                         }
                       </div>
-                      @if(spiceLevel?.invalid && spiceLevel?.touched){
+                      @if(spiceLevelControl?.invalid &&
+                      spiceLevelControl?.touched){
                       <h5 class="text-red-500 text-center py-3">
                         Please Select Spice level
                       </h5>
@@ -192,6 +194,12 @@
                     <div class="text-center">
                       <button
                         class="bg-[url('/images/buttons2.png')] bg-contain bg-center bg-no-repeat hover:bg-[url('/images/buttons2-hover.png')] hover:text-black h-auto py-10 px-10 text-center transition-all ease-in-out duration-300 cursor-pointer text-yellow-300"
+                        (click)="
+                          onSubmitProductForm(
+                            selectedProduct.id,
+                            selectedProduct.name
+                          )
+                        "
                       >
                         Add to Cart
                       </button>
@@ -207,16 +215,49 @@
         }
       </div>
     </div>
-    <!-- FIXED: Shopping Cart with proper width and spacing -->
-    <div class="border-2 border-yellow-300 h-fit rounded-lg">
-      <div class="flex items-center gap-3 mb-4">
-        <i
-          class="pi pi-shopping-cart transform -scale-x-100 text-3xl text-yellow-300 flex-shrink-0"
-        ></i>
-        <h5 class="text-yellow-300 font-bold text-2xl whitespace-nowrap">
-          Shopping Cart
-        </h5>
+    <div
+      class="border-1 border-yellow-300 h-fit rounded-lg pl-3 pr-3 pt-2 w-3/11 sticky top-8"
+    >
+      <div class="flex items-center gap-3 mb-4 justify-around">
+        <div class="flex">
+          <i
+            class="pi pi-shopping-cart transform -scale-x-100 text-3xl text-yellow-300 flex-shrink-0 pl-"
+          ></i>
+          <h5 class="text-yellow-300 font-bold text-xl">Shopping Cart</h5>
+        </div>
       </div>
+      <div class="text-yellow-300">
+        @if(cartItems$ | async ; as cartItems){ @if(cartItems.length <= 0){
+        <div class="flex flex-col items-center justify-around">
+          <img src="images/cart.png" class="max-w-9/12 pt-3" />
+          <h1 class="px-3 py-3 text-2xl font-semibold">Empty Cart</h1>
+        </div>
+        } @else {
+
+        <div class="flex justify-between">
+          <h5 class="text-xl font-bold">ITEMS</h5>
+          <h5 class="text-2xl">{{ cartItems.length }}</h5>
+        </div>
+        @for(cartItem of cartItems ; track cartItem){
+        <div class="flex">
+          <div class="flex justify-between w-full">
+            <h5 class="text-xl font-bold">{{ cartItem.name }}</h5>
+
+            <h5 class="text-xl text-white">
+              {{ cartItem.price | customCurrency : "EGP" }}
+            </h5>
+          </div>
+        </div>
+        }
+        <div class="flex w-full justify-between text-2xl font-bold">
+          <h1>Total</h1>
+          <h1>
+            {{ totalPrice$ | async | customCurrency : "EGP" }}
+          </h1>
+        </div>
+        }}
+      </div>
+
       <!-- Add your cart content here -->
     </div>
   </div>

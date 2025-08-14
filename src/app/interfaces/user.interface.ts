@@ -1,20 +1,19 @@
-interface User {
-  id: number;
+import { FormControl, FormGroup } from '@angular/forms';
+
+export interface User {
+  id?: number;
   email: string;
-  password: string; // This gets hashed automatically by json-server-auth
-  // Add your custom fields below:
+  password: string;
   name?: string;
-  phone?: string;
-  address?: {
-    street?: string;
-    city?: string;
-    country?: string;
-  };
-  preferences?: {
-    default_branch_id?: number;
-    preferred_spice?: string;
-    notifications?: boolean;
-  };
+  phone?: string; // Make sure this matches your form field
   created_at?: string;
   updated_at?: string;
+}
+export interface RegisterForm {
+  name: FormControl<string>;
+  email: FormControl<string>;
+  phone: FormControl<string>;
+  password: FormControl<string>;
+  confirmPassword?: FormControl<string>; // Optional - can be removed
+  approveTerms?: FormControl<boolean>; // Optional - can be removed
 }

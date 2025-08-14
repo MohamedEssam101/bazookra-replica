@@ -15,6 +15,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
+import { CustomCurrencyPipe } from '../../shared/pipes/custom-currency.pipe';
 
 @Component({
   selector: 'app-menu',
@@ -27,32 +29,44 @@ import {
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    CustomCurrencyPipe,
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
 })
 export class MenuComponent implements OnInit {
-  private readonly categorieService = inject(CategorieService);
-  private readonly productsService = inject(ProductService);
-  categories$ = this.categorieService.categories$;
-  products$ = this.productsService.products$;
-  selectedCategory$ = this.productsService.selectedCategory$;
+  private readonly _categorieService = inject(CategorieService);
+  private readonly _productsService = inject(ProductService);
+  private readonly _cartService = inject(CartService);
+  cartItems$ = this._cartService.userCart$;
+  categories$ = this._categorieService.categories$;
+  products$ = this._productsService.products$;
+
+  totalPrice$ = this._cartService.calculateTotalPrice();
+  selectedCategory$ = this._productsService.selectedCategory$;
   selectedProduct?: Product;
+
   private fb = inject(FormBuilder);
 
   productForm: FormGroup = this.fb.group({
+    name: [null],
     size: ['single', Validators.required],
     price: [null, Validators.required],
-    spiceLevel: [null, Validators.required],
+    spiceLevel: ['regular', Validators.required],
     quantity: [1, [Validators.required, Validators.min(1)]],
+    product_id: [null],
   });
   ngOnInit(): void {
-    this.categorieService.loadCategories().subscribe();
-    this.productsService.loadProducts().subscribe();
+    this._categorieService.loadCategories().subscribe();
+    this._productsService.loadProducts().subscribe();
+
+    this._cartService.userCart$.subscribe((res) => {
+      console.log(res);
+    });
   }
   categorieProducts(cId: number) {
-    this.productsService.setSelectCategorySubject(cId);
-    this.productsService.loadProducts().subscribe();
+    this._productsService.setSelectCategorySubject(cId);
+    this._productsService.loadProducts().subscribe();
   }
 
   getPricingEntries(pricing: Product['pricing']) {
@@ -67,20 +81,15 @@ export class MenuComponent implements OnInit {
     this.visible = true;
     this.selectedProduct = product;
   }
-  get size() {
-    return this.productForm.get('size');
-  }
-  get price() {
-    return this.productForm.get('price');
-  }
 
-  get spiceLevel() {
-    return this.productForm.get('spiceLevel');
-  }
-  onSubmitProductForm() {
+  sizeControl = this.productForm.get('size');
+  priceControl = this.productForm.get('price');
+  spiceLevelControl = this.productForm.get('spiceLevel');
+  onSubmitProductForm(pId: number, pName: string) {
     if (this.productForm.valid) {
-      console.log(this.productForm);
       console.log('testing is done');
+      this.addToCart(pId, pName);
+      this.visible = false;
     } else {
       console.log('error befre submit');
       this.productForm.markAllAsTouched();
@@ -90,10 +99,21 @@ export class MenuComponent implements OnInit {
     this.productForm.reset({
       size: 'single',
       price: null,
-      spiceLevel: null,
+      spiceLevel: 'regular',
       quantity: 1,
     });
 
     this.productForm.markAsUntouched();
+  }
+
+  addToCart(pId: number, pName: string) {
+    console.log(pId);
+    this.productForm.patchValue({ product_id: pId, name: pName });
+
+    this._cartService.addItemToCart(this.productForm.value);
+  }
+  onSizeChange(entry1: string, entry2: number) {
+    console.log('the entry is ');
+    this.productForm.patchValue({ size: entry1, price: entry2 });
   }
 }

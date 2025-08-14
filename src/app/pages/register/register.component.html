@@ -12,11 +12,27 @@
             <label class="text-white"> Name</label>
           </div>
           <input
-            formControlName="firstName"
+            formControlName="name"
             placeholder="first name "
             class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
           />
-          <!-- first name  -->
+          @if (firstNameControl?.touched && firstNameControl?.errors) { @if
+          (firstNameControl?.errors?.['required']) {
+          <h1 class="text-red-500 text-sm pb-3">Name is required</h1>
+          } @else if (firstNameControl?.errors?.['minlength']) {
+          <h1 class="text-red-500 text-sm pb-3">
+            Name must have at least four letters
+          </h1>
+          } @else if (firstNameControl?.errors?.['maxlength']) {
+          <h1 class="text-red-500 text-sm pb-3">
+            Name can't be bigger than 16 letters
+          </h1>
+          } @else {
+          <h1 class="text-red-500 text-sm pb-3">
+            Name can't have special characters
+          </h1>
+          } }
+          <!-- email  -->
           <div class="flex pb-1">
             <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
             <label class="text-white"> Email</label>
@@ -26,18 +42,30 @@
             placeholder="first name "
             class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
           />
+          @if(emailControl?.touched && emailControl?.errors) {
+          @if(emailControl?.errors?.['required']) {
+          <h1 class="text-red-500 text-sm pb-3">Email address is required</h1>
+          } @else if(emailControl?.errors?.['email']) {
+          <h1 class="text-red-500 text-sm pb-3">
+            Please provide a correct email
+          </h1>
+          } }
           <!-- mobile -->
           <div class="flex">
             <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
             <label class="text-white"> Mobile</label>
           </div>
           <input
-            formControlName="mobile"
+            formControlName="phone"
             placeholder="Mobile: xxxxxxxxxxxxxxx"
             class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
           />
-          @if( mobileControl?.invalid && mobileControl?.touched){
-          <span class="text-white">Please type a working phone number</span>
+          @if(phoneControl?.errors?.['required'] && phoneControl?.touched){
+          <h1 class="text-red-500 text-sm pb-3">Phone number can't be empty</h1>
+          } @else if( phoneControl?.invalid && phoneControl?.touched){
+          <h1 class="text-red-500 text-sm pb-3">
+            please type a valid Phone number
+          </h1>
           }
           <div class="flex pb-1">
             <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
@@ -48,6 +76,25 @@
             placeholder="password"
             class="w-full px-1 py-1 border rounded-lg pl-3 focus:outline-none duration-200 transition-colors text-gray-600 bg-white mb-3"
           />
+          @if(passwordControl?.touched && passwordControl?.errors){ @if
+          (passwordControl?.errors?.['required']) {
+          <h1 class="text-red-500 text-sm pb-3">Password is required</h1>
+
+          } @else if(passwordControl?.errors?.['minlength']){
+          <h1 class="text-red-500 text-sm pb-3">
+            Password has to be at least 8 letters
+          </h1>
+          } @else if(passwordControl?.errors?.['hasSpecialChar']){
+          <h1 class="text-red-500 text-sm pb-3">
+            Password must have a special character
+          </h1>
+
+          }@else if(passwordControl?.errors?.['hasUpperLower']){
+          <h1 class="text-red-500 text-sm pb-3">
+            Ppassword must have an Capital letter
+          </h1>
+
+          } }
           <div class="flex pb-1">
             <img src="/images/crosshairs.png" class="w-7 h-7 mr-1" />
             <label class="text-white"> Confirm Password</label>
@@ -73,6 +120,12 @@
             </a>
           </div>
         </div>
+        @if(approveTermsControl?.touched && approveTermsControl?.value ===
+        false){
+        <h1 class="text-red-500 text-sm pb-3">
+          Please Accept our terms To Create your account
+        </h1>
+        }
       </form>
       <div class="text-center">
         <button

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { redirectLoggedInGuard } from './core/guards/redirect-logged-in.guard';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,7 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('./pages/login/login.component').then((c) => c.LoginComponent),
+    canActivate: [redirectLoggedInGuard],
   },
   {
     path: 'register',
@@ -32,5 +34,6 @@ export const routes: Routes = [
       import('./pages/register/register.component').then(
         (c) => c.RegisterComponent
       ),
+    canActivate: [redirectLoggedInGuard],
   },
 ];

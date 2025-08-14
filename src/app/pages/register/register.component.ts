@@ -1,7 +1,16 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  NonNullableFormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
-import { UserService } from '../../services/user.service';
+import { authService } from '../../services/auth.service';
+import { min } from 'rxjs';
+import { CustomValidators } from '../../shared/validators/custom-validators';
+import { RegisterForm, User } from '../../interfaces/user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,30 +19,43 @@ import { UserService } from '../../services/user.service';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  private fb = inject(FormBuilder);
+  private fb = inject(NonNullableFormBuilder);
 
-  private readonly user_Service = inject(UserService);
+  private readonly user_Service = inject(authService);
+
+  private readonly router = inject(Router);
+
   registerForm = this.fb.group({
-    firstName: ['', Validators.required],
-    mobile: [
-      null,
+    name: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(16),
+        Validators.pattern(/^[a-zA-Z\s\-']+$/),
+      ],
+    ],
+    email: ['', [Validators.required, Validators.email]],
+
+    phone: [
+      '',
       [
         Validators.required,
         Validators.pattern(/^(\+201|01|00201)[0-2,5]{1}[0-9]{8}$/),
       ],
     ],
-    email: [null, Validators.required],
     password: [
-      null,
+      '',
       [
         Validators.required,
-        Validators.pattern(
-          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-        ),
+        Validators.minLength(8),
+        CustomValidators.hasNumber,
+        CustomValidators.hasSpecialChar,
+        CustomValidators.hasUpperLower,
       ],
     ],
     confirmPassword: [
-      null,
+      '',
       [
         Validators.required,
         Validators.pattern(
@@ -45,22 +67,46 @@ export class RegisterComponent {
   });
 
   firstNameControl = this.registerForm.get('firstName');
-  mobileControl = this.registerForm.get('mobile');
+  emailControl = this.registerForm.get('email');
+
+  phoneControl = this.registerForm.get('mobile');
   passwordControl = this.registerForm.get('password');
   confirmPasswordControl = this.registerForm.get('confirmPassword');
-  approveTermsControlControl = this.registerForm.get('approveTerms');
+  approveTermsControl = this.registerForm.get('approveTerms');
 
-  passwordMatchValidator(): boolean {
+  onSubmit() {
+    if (this.CheckForm()) {
+      this.submitForm();
+    } else {
+      this.handleInvalidForm();
+    }
+  }
+
+  private CheckForm(): boolean {
+    return (
+      this.registerForm.valid &&
+      this.passwordMatchValidator() &&
+      this.approveTermsValidator()
+    );
+  }
+  private passwordMatchValidator(): boolean {
     return this.passwordControl?.value === this.confirmPasswordControl?.value;
   }
 
-  onSubmit() {
-    if (this.registerForm.valid && this.passwordMatchValidator()) {
-      console.log('every thing is right');
-      this.user_Service.onRegister(this.registerForm.value);
-      console.log(this.registerForm.value);
-    } else {
-      this.registerForm.markAllAsTouched();
-    }
+  private approveTermsValidator(): boolean {
+    return this.approveTermsControl?.value === true;
+  }
+  private submitForm() {
+    const { confirmPassword, approveTerms, ...userData } =
+      this.registerForm.getRawValue();
+
+    this.user_Service.onRegister(userData);
+    console.log(this.registerForm.value);
+    this.router.navigate(['/login']);
+    this.registerForm.reset();
+  }
+  private handleInvalidForm() {
+    console.log('marked all as touched');
+    this.registerForm.markAllAsTouched();
   }
 }

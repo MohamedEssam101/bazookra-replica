@@ -45,7 +45,7 @@
     <!-- country -->
 
     <!-- Profile -->
-    <div class="items-center flex" (click)="menu.toggle($event)">
+    <div class="items-center flex" (click)="toggleEvent($event)">
       <i
         class="pi pi-user text-black bg-yellow-300 text-2xl border-2 border-yellow-300 rounded-xl"
         style="font-size: 1.6rem"
@@ -54,16 +54,28 @@
       <span class="text-yellow-300 pl-2 cursor-pointer">{{
         "Profile" | translate
       }}</span>
+      @if(loggedIn$ | async){
+      <!-- if true  -->
       <p-tieredmenu
         #menu
-        [model]="profile"
+        [model]="userItems"
         [popup]="true"
         styleClass="mt-3 bg-black border-black "
       />
+
+      }@else{
+      <p-tieredmenu
+        #menu
+        [model]="guestItems"
+        [popup]="true"
+        styleClass="mt-3 bg-black border-black "
+      />
+
+      }
+      <p-button class="mr-3" (click)="changeLanguage()">
+        {{ translate.currentLang === "ar" ? "english" : "العربية " }}
+      </p-button>
+      <!-- language changer -->
     </div>
-    <p-button class="mr-3" (click)="changeLanguage()">
-      {{ translate.currentLang === "ar" ? "english" : "العربية " }}
-    </p-button>
-    <!-- language changer -->
   </div>
 </section>

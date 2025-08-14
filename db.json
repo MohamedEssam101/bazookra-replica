@@ -456,11 +456,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/G3Vhb06b/s-1738168187193737.jpg",
@@ -478,11 +474,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/ZRJN0Yrf/s-1738169068798875.jpg",
@@ -500,11 +492,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/mryG96n3/s-1738169888523965.jpg",
@@ -522,11 +510,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "extra_spicy"
-      ],
+      "spice_options": ["regular", "spicy", "extra_spicy"],
       "default_spice": "spicy",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/TDy07NSc/s-1738575486518206.jpg",
@@ -544,11 +528,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "extra_spicy"
-      ],
+      "spice_options": ["regular", "spicy", "extra_spicy"],
       "default_spice": "spicy",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/60qt3HK7/s-1738575903624040.jpg",
@@ -566,11 +546,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/k2t9gNCT/s-1738171934559242.jpg",
@@ -588,11 +564,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/nq5SKrwf/s-1738576125235005.jpg",
@@ -608,11 +580,7 @@
       },
       "default_size": "regular",
       "has_size_variants": false,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/998n4sGD/s-1738836151723831.jpg",
@@ -628,11 +596,7 @@
       },
       "default_size": "regular",
       "has_size_variants": false,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/h1RM1Sw5/s-1745150518707064.jpg",
@@ -648,11 +612,7 @@
       },
       "default_size": "regular",
       "has_size_variants": false,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/CNt8Y8c/s-1745150752564953.jpg",
@@ -670,10 +630,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "spicy",
-        "extra_spicy"
-      ],
+      "spice_options": ["spicy", "extra_spicy"],
       "default_spice": "spicy",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/PGrpX2fY/s-174292265288940.jpg",
@@ -691,11 +648,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/Q3nsTPsf/s-1744622143223532.jpg",
@@ -713,10 +666,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "spicy",
-        "extra_spicy"
-      ],
+      "spice_options": ["spicy", "extra_spicy"],
       "default_spice": "spicy",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/9HxxC6Bk/s-1753016121978433.jpg",
@@ -734,9 +684,7 @@
       },
       "default_size": "single",
       "has_size_variants": true,
-      "spice_options": [
-        "extra_spicy"
-      ],
+      "spice_options": ["extra_spicy"],
       "default_spice": "extra_spicy",
       "has_spice_variants": false,
       "image_url": "https://i.ibb.co/N6crfqP3/s-1748775672895993.jpg",
@@ -752,11 +700,7 @@
       },
       "default_size": "regular",
       "has_size_variants": false,
-      "spice_options": [
-        "regular",
-        "spicy",
-        "mix"
-      ],
+      "spice_options": ["regular", "spicy", "mix"],
       "default_spice": "regular",
       "has_spice_variants": true,
       "image_url": "https://i.ibb.co/d0hF28Yj/s-1746523633836649.jpg",
@@ -1396,21 +1340,25 @@
   ],
   "users": [
     {
-      "id": 1,
-      "phone": "+01009691301",
-      "password": "user123",
-      "name": "John Doe",
-      "created_at": "2024-01-01T00:00:00.000Z",
-      "updated_at": "2024-01-01T00:00:00.000Z"
-    },
-    {
       "email": "ahmed2@gmail.com",
       "password": "$2a$10$PEvhs.4uEbmcZZdoZXlkae7bxXWrpu47RTuP5BmAUdC8Bu7rArJcK",
       "firstName": "ahmede",
       "mobile": "01009691301",
-      "confirmPassword": "Mohamed@123",
-      "approveTerms": true,
+      "id": 1
+    },
+    {
+      "email": "Ahmed@gmail.com",
+      "password": "$2a$10$aqFEO4zmBYLCLgH.id8gPuTpj9pxD0RYAYaP5yc16D2RZLTfh6cze",
+      "firstName": "Ahmed",
+      "mobile": "01009691301",
       "id": 2
+    },
+    {
+      "email": "mohamed123@gmail.com",
+      "password": "$2a$10$oZDmHuHUQgU//p9odqui3.mqDQM65TOopiPAgMacTnqDjCvLz8JpG",
+      "name": "Mohamed Essam",
+      "phone": "01009691301",
+      "id": 3
     }
   ],
   "user_addresses": [
@@ -1471,7 +1419,7 @@
       "branch_id": 1,
       "product_id": 2,
       "size": "double",
-      "spice": "medium",
+      "spiceLevel": "medium",
       "offer_id": null,
       "quantity": 2,
       "created_at": "2024-01-01T00:00:00.000Z",

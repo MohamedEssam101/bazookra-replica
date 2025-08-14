@@ -1,9 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  NonNullableFormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
-import { UserService } from '../../services/user.service';
+import { authService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +17,13 @@ import { UserService } from '../../services/user.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  private fb = inject(FormBuilder);
+  private fb = inject(NonNullableFormBuilder);
 
-  private readonly userService = inject(UserService);
+  private readonly userService = inject(authService);
   loginForm = this.fb.group({
-    email: [null, Validators.required],
+    email: ['', Validators.required],
     password: [
-      null,
+      '',
       [
         Validators.required,
         Validators.pattern(
@@ -39,7 +44,10 @@ export class LoginComponent {
     console.log(this.loginForm.errors);
     if (this.loginForm.valid) {
       console.log('form is valid');
-      this.userService.onLogin(this.loginForm.value);
+
+      // using nonNullable formbuilder , so the data should be either string or undefined , using getRawValue i am assuring its a value
+      const { rememberMe, ...userData } = this.loginForm.getRawValue();
+      this.userService.onLogin(userData).subscribe();
     } else {
       console.log('form is touched ');
       this.loginForm.markAllAsTouched();
