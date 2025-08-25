@@ -7,10 +7,18 @@ import { authService } from '../../services/auth.service';
 import { AsyncPipe } from '@angular/common';
 import { MenuItem } from 'primeng/api';
 import { Observable, Subject, takeUntil } from 'rxjs';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',
-  imports: [TranslateModule, Button, RouterLink, TieredMenuModule, AsyncPipe],
+  imports: [
+    TranslateModule,
+    Button,
+    RouterLink,
+    TieredMenuModule,
+    AsyncPipe,
+    SidebarComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

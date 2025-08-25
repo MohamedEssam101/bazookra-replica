@@ -4,7 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'customCurrency',
 })
 export class CustomCurrencyPipe implements PipeTransform {
-  transform(value: number | null, currencyCode: string = 'EGP'): string {
+  // default value for currencyCode is egp
+  transform(
+    value: number | undefined | null,
+    currencyCode: string = 'EGP'
+  ): string {
     if (value === null || value === undefined) return '';
 
     if (!value) return '';

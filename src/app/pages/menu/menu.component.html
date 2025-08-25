@@ -1,4 +1,4 @@
-<section class="px-7">
+<section class="px-3 lg:px-7">
   <!-- BreadCrumb -->
   <div class="text-white py-6">
     <a routerLink="/home" class="hover:text-green-600 cursor-pointer"> Home</a>
@@ -7,20 +7,33 @@
   </div>
 
   <!-- Menu header -->
-  <div class="flex py-6">
-    <img src="/images/bazooka-menu-icon.png" class="h-9" />
-    <span class="text-yellow-300 text-4xl font-black">Menu</span>
+  <div class="flex justify-between pb-5">
+    <div class="flex py-6">
+      <img src="/images/bazooka-menu-icon.png" class="h-9" />
+      <span class="text-yellow-300 text-4xl font-black">Menu</span>
+    </div>
+    <!-- cart Click part on mobile -->
+    <div class="flex mr-3">
+      <button
+        (click)="scrollToCart()"
+        class="text-white lg:hidden border-yellow-400 rounded-[50%] border-2"
+      >
+        <div class="flex flex-col items-center pt-1">
+          <img src="images/cart.png" class="h-6 w-8 justify-center mb-1" />
+          <h1 class="text-yellow-400 text-sm px-2">shopping <br />Cart</h1>
+        </div>
+      </button>
+    </div>
   </div>
 
-  <div class="flex w-full">
-    <div class="flex-1 min-w-0 pr-4">
+  <div class="flex-col lg:flex-row lg:flex md:px-3 lg:mb-20">
+    <div class="flex-1 min-w-0 lg:pr-3">
       <!-- Main content area -->
       <div class="min-w-0">
         @if(categories$ | async ; as categories){
 
-        <!-- FIXED: Categories  -->
         <div class="w-full mb-6">
-          <ul class="flex gap-3 text-center overflow-x-auto">
+          <ul class="flex gap-3 text-center overflow-x-scroll">
             @for(categorie of categories ; track categorie.id){
             <li
               class="cursor-pointer bg-[url('/images/buttons2.png')] bg-contain bg-no-repeat bg-center font-semibold text-yellow-300 min-h-12 min-w-36 flex items-center justify-center px-2 py-1 text-xs leading-tight flex-shrink-0"
@@ -35,50 +48,65 @@
           </ul>
         </div>
 
-        <!-- FIXED: Grid with proper responsive behavior -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-9 w-full"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 w-full bg-black"
         >
           @if(products$ | async ; as products){ @for(product of products ; track
           product.id){
           <div
-            class="flex items-center gap-3 cursor-pointer min-w-0"
+            class="flex flex-col items-center gap-3 cursor-pointer md:flex-row"
             (click)="showProductDialog(product)"
           >
             <img
               [src]="product.image_url"
-              class="w-24 h-24 object-cover rounded-xl flex-shrink-0"
+              class="w-40 h-40 object-cover rounded-xl flex-shrink-0 md:w-20 md:h-20"
             />
-            <div class="flex-col text-white min-w-0 flex-1">
-              <div class="text-yellow-300 flex font-bold items-center">
+            <div
+              class="flex-col text-white min-w-0 flex-1 flex items-center justify-center md:items-start"
+            >
+              <div class="text-yellow-300 flex font-bold md:py-2">
                 <img
                   class="w-6 h-6 flex-shrink-0"
                   src="/images/crosshairs.png"
                 />
-                <span class="pl-0.5 truncate">{{ product.name }}</span>
+                <span class="pl-0.5 w-11/12">{{ product.name }}</span>
               </div>
-              <span class="line-clamp-2 text-sm">{{
-                product.description
-              }}</span>
+              <h1
+                class="line-clamp-2 text-sm text-center md:text-start md:w-full w-10/12"
+              >
+                {{ product.description }}
+              </h1>
               @if(hasPricing(product.pricing)) {
-              <span class="text-yellow-300 font-bold text-sm">Price</span>
-              @for(entry of getPricingEntries(product.pricing) ; track
-              entry[0]){
-              <div class="flex items-center">
-                <img
-                  class="w-6 h-6 flex-shrink-0"
-                  src="/images/crosshairs.png"
-                />
-                <span class="text-yellow-300 pr-1 flex-shrink-0 text-sm">
-                  {{ entry[0] }} :
-                </span>
-                <span class="font-semibold text-sm">{{ entry[1] }} EGP</span>
+              <span class="text-yellow-300 font-bold text-lg pt-3 pb-1"
+                >Price</span
+              >
+              <div class="flex">
+                <div class="flex flex-col">
+                  @for(entry of getPricingEntries(product.pricing) ; track
+                  entry[0]){
+
+                  <div class="flex">
+                    <img class="w-6 h-6" src="/images/crosshairs.png" />
+                    <span class="text-yellow-300 pr-1 text-md">
+                      {{ entry[0] }} :
+                    </span>
+                    <span class="font-semibold text-md"
+                      >{{ entry[1] }} EGP</span
+                    >
+                  </div>
+                  }
+                </div>
+                <i
+                  class="pi pi-plus text-black bg-yellow-300 p-1 mt-4 rounded-xl flex-shrink-0 flex md:mr-3 h-fit ml-8"
+                ></i>
               </div>
-              } }
+
+              } @if(!$last){
+              <div
+                class="pb-0.5 bg-yellow-300 w-10/12 my-4 md:self-center"
+              ></div>
+              }
             </div>
-            <i
-              class="pi pi-plus text-black bg-yellow-300 p-1 rounded-xl flex-shrink-0"
-            ></i>
           </div>
           } }
         </div>
@@ -88,7 +116,11 @@
           (onHide)="resetForm()"
           [(visible)]="visible"
           [modal]="true"
-          [style]="{ width: '95vw', maxWidth: '45rem' }"
+          [style]="{
+            width: '95vw',
+            maxWidth: '45rem',
+            border: '1px solid yellow'
+          }"
           [dismissableMask]="true"
         >
           <ng-template #headless>
@@ -96,16 +128,21 @@
               <div>
                 <form [formGroup]="productForm">
                   <!-- Add menu -->
-                  <span class="text-yellow-300"> Add menu Choice</span>
+                  <div class="flex justify-between">
+                    <span class="text-yellow-300"> Add menu Choice</span>
+                    <i
+                      class="pi pi-times-circle text-3xl text-yellow-300"
+                      (click)="closeProductDialog()"
+                    ></i>
+                  </div>
                   <div class="text-yellow-300 flex justify-between pb-3 pt-3">
                     <span>{{ selectedProduct?.name }}</span>
-                    <span>Price Selection</span>
                   </div>
-                  <div class="flex justify-between">
-                    <span class="max-w-7/12 text-white">{{
+                  <div class="flex flex-col">
+                    <span class="lg:max-w-7/12 text-white text-sm">{{
                       selectedProduct?.description
                     }}</span>
-                    <div class="justify-center">
+                    <div class="justify-center flex">
                       <p-inputnumber
                         formControlName="quantity"
                         max="3"
@@ -114,7 +151,8 @@
                         spinnerMode="horizontal"
                         inputId="horizontal"
                         [inputStyle]="{
-                          width: '4rem',
+                          width: '100%',
+
                           backgroundColor: 'black',
                           color: 'yellow',
                           border: '1px solid yellow',
@@ -146,8 +184,8 @@
                         <div class="text-white flex items-center">
                           <p-radioButton
                             [inputId]="entry[0]"
-                            [value]="entry[1]"
-                            formControlName="price"
+                            [value]="entry[0]"
+                            formControlName="size"
                             (click)="onSizeChange(entry[0], entry[1])"
                           />
                           <label
@@ -176,7 +214,7 @@
                           <p-radioButton
                             [inputId]="spice"
                             [value]="spice"
-                            formControlName="spiceLevel"
+                            formControlName="spice"
                           />
                           <label [for]="spice" class="pl-2 whitespace-nowrap">{{
                             spice
@@ -184,8 +222,7 @@
                         </div>
                         }
                       </div>
-                      @if(spiceLevelControl?.invalid &&
-                      spiceLevelControl?.touched){
+                      @if(spiceControl?.invalid && spiceControl?.touched){
                       <h5 class="text-red-500 text-center py-3">
                         Please Select Spice level
                       </h5>
@@ -216,7 +253,8 @@
       </div>
     </div>
     <div
-      class="border-1 border-yellow-300 h-fit rounded-lg pl-3 pr-3 pt-2 w-3/11 sticky top-8"
+      class="border-1 border-yellow-300 h-fit rounded-lg pl-3 pr-3 pt-2 w-full lg:w-3/12 sticky top-8 mt-15 lg:mt-2"
+      #cartSection
     >
       <div class="flex items-center gap-3 mb-4 justify-around">
         <div class="flex">
@@ -234,25 +272,32 @@
         </div>
         } @else {
 
-        <div class="flex justify-between">
+        <div class="flex justify-between pb-4">
           <h5 class="text-xl font-bold">ITEMS</h5>
           <h5 class="text-2xl">{{ cartItems.length }}</h5>
         </div>
         @for(cartItem of cartItems ; track cartItem){
-        <div class="flex">
-          <div class="flex justify-between w-full">
-            <h5 class="text-xl font-bold">{{ cartItem.name }}</h5>
+        <div>
+          <div class="flex">
+            <div class="flex justify-between w-full">
+              <h5 class="text-xl font-bold">{{ cartItem.name }}</h5>
 
-            <h5 class="text-xl text-white">
-              {{ cartItem.price | customCurrency : "EGP" }}
-            </h5>
+              <h5 class="text-xl text-white">
+                {{ cartItem.price | customCurrency }}
+              </h5>
+            </div>
           </div>
+          <h1 class="text-xl text-white">
+            {{ cartItem.size }} {{ cartItem.spice }}
+          </h1>
         </div>
+
         }
-        <div class="flex w-full justify-between text-2xl font-bold">
+        <div class="py-[0.5px] bg-yellow-300 mt-3 mb-1"></div>
+        <div class="flex w-full justify-between text-2xl font-bold my-1">
           <h1>Total</h1>
           <h1>
-            {{ totalPrice$ | async | customCurrency : "EGP" }}
+            {{ totalPrice$ | async | customCurrency }}
           </h1>
         </div>
         }}

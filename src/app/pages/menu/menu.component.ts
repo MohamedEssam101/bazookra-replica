@@ -1,4 +1,12 @@
-import { Component, inject, NgModule, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  NgModule,
+  OnInit,
+  ViewChild,
+  viewChild,
+} from '@angular/core';
 import { CategorieService } from '../../services/categorie.service';
 import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
 import { ProductService } from '../../services/product.service';
@@ -45,6 +53,7 @@ export class MenuComponent implements OnInit {
   totalPrice$ = this._cartService.calculateTotalPrice();
   selectedCategory$ = this._productsService.selectedCategory$;
   selectedProduct?: Product;
+  @ViewChild('cartSection') cartSection!: ElementRef;
 
   private fb = inject(FormBuilder);
 
@@ -52,7 +61,7 @@ export class MenuComponent implements OnInit {
     name: [null],
     size: ['single', Validators.required],
     price: [null, Validators.required],
-    spiceLevel: ['regular', Validators.required],
+    spice: ['regular', Validators.required],
     quantity: [1, [Validators.required, Validators.min(1)]],
     product_id: [null],
   });
@@ -81,10 +90,12 @@ export class MenuComponent implements OnInit {
     this.visible = true;
     this.selectedProduct = product;
   }
-
+  closeProductDialog() {
+    this.visible = false;
+  }
   sizeControl = this.productForm.get('size');
   priceControl = this.productForm.get('price');
-  spiceLevelControl = this.productForm.get('spiceLevel');
+  spiceControl = this.productForm.get('spice');
   onSubmitProductForm(pId: number, pName: string) {
     if (this.productForm.valid) {
       console.log('testing is done');
@@ -99,7 +110,7 @@ export class MenuComponent implements OnInit {
     this.productForm.reset({
       size: 'single',
       price: null,
-      spiceLevel: 'regular',
+      spice: 'regular',
       quantity: 1,
     });
 
@@ -115,5 +126,11 @@ export class MenuComponent implements OnInit {
   onSizeChange(entry1: string, entry2: number) {
     console.log('the entry is ');
     this.productForm.patchValue({ size: entry1, price: entry2 });
+  }
+  scrollToCart() {
+    this.cartSection.nativeElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   }
 }

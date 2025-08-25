@@ -1,12 +1,13 @@
 <section
-  class="min-h-20 flex m-auto justify-between w-full shadow-[0_0_25px_-6px_rgba(255,255,255,0.8)]"
+  class="min-h-20 flex m-auto justify-between shadow-[0_0_25px_-6px_rgba(255,255,255,0.8)]"
 >
   <!-- left logo -->
-  <div class="h-16 flex">
-    <img src="/images/bazookaLogo.png" />
+  <div class="h-12 flex self-center">
+    <img src="/images/bazookaLogo.png" class="h-10 sm:h-12" />
+    <app-sidebar class="lg:hidden self-center mr-2 ml-2"></app-sidebar>
   </div>
   <!-- Middle menu -->
-  <div class="flex items-center">
+  <div class="hidden lg:inline self-center">
     <nav>
       <ul class="flex gap-3 font-semibold">
         <li
@@ -40,18 +41,18 @@
   <!-- hotline and profile -->
   <div class="flex justify-between gap-3 self-center">
     <!-- hotline -->
-    <img src="/images/hotline.png" class="max-h-11" />
+    <img src="/images/hotline.png" class="max-h-11 hidden md:inline" />
 
     <!-- country -->
 
     <!-- Profile -->
-    <div class="items-center flex" (click)="toggleEvent($event)">
+    <div class="items-center flex gap-1 sm:gap-2" (click)="toggleEvent($event)">
       <i
         class="pi pi-user text-black bg-yellow-300 text-2xl border-2 border-yellow-300 rounded-xl"
         style="font-size: 1.6rem"
       >
       </i>
-      <span class="text-yellow-300 pl-2 cursor-pointer">{{
+      <span class="text-yellow-300 cursor-pointer hidden md:inline">{{
         "Profile" | translate
       }}</span>
       @if(loggedIn$ | async){
@@ -72,7 +73,10 @@
       />
 
       }
-      <p-button class="mr-3" (click)="changeLanguage()">
+      <p-button
+        styleClass="bg-yellow-300 mr-3 border-yellow-300 text-black font-semibold"
+        (click)="changeLanguage()"
+      >
         {{ translate.currentLang === "ar" ? "english" : "العربية " }}
       </p-button>
       <!-- language changer -->
